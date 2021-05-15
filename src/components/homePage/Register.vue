@@ -31,6 +31,7 @@ export default {
             align-items: center;
             background-color: pink;
             text-transform: uppercase;
+            margin-bottom: 50px;
             span {
                 font-weight: bold;
                 font-size: 1.3rem;

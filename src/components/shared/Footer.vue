@@ -1,20 +1,42 @@
 <template>
     <div class="footer">
-        <div class="footer-home pointer footer-selected">
+        <a href="/#/" class="footer-home pointer" :class="checkClass('/')">
             <span class="material-icons">home</span>
-        </div>
-        <div class="footer-data pointer">
+        </a>
+        <a href="/#/analise" class="footer-analysis pointer" :class="checkClass('/analise')">
             <span class="material-icons">trending_up</span>
-        </div>
-        <div class="footer-settings pointer">
+        </a>
+        <a href="/#/dados" class="footer-data pointer" :class="checkClass('/dados')">
+            <span class="material-icons">table_chart</span>
+        </a>
+        <a href="/#/configuracoes" class="footer-settings pointer" :class="checkClass('/configuracoes')">
             <span class="material-icons">settings</span>
-        </div>
+        </a>
     </div>
 </template>
 
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  data: function () {
+    return {
+      currentPath: '/'
+    }
+  },
+  methods: {
+    checkClass: function (type) {
+      if (type === this.currentPath) {
+        return 'footer-selected'
+      }
+      return ''
+    }
+  },
+  watch: {
+    $route (to) {
+      this.currentPath = to.path
+      console.log('aaaaa', to.path)
+    }
+  }
 }
 </script>
 
@@ -31,6 +53,9 @@ export default {
         margin-top: 35px;
         position: fixed;
         bottom: 0;
+        box-shadow: 0px -1px 12px -6px rgba(0,0,0,0.75);
+        -webkit-box-shadow: 0px -1px 12px -6px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px -1px 12px -6px rgba(0,0,0,0.75);
         &-logo {
             font-size: 1.4rem;
         }

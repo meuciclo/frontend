@@ -32,6 +32,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+  }
   .pointer {
     cursor: pointer;
   }
