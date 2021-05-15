@@ -1,5 +1,7 @@
 # meuciclo
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/975c7ab1-6919-48ac-9197-b4949dbcbfac/deploy-status)](https://app.netlify.com/sites/condescending-leakey-38e8cf/deploys)
+
 ## Project setup
 ```
 npm install
