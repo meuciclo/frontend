@@ -6,9 +6,6 @@
         <a href="/#/analise" class="footer-analysis pointer" :class="checkClass('/analise')">
             <span class="material-icons">trending_up</span>
         </a>
-        <a href="/#/dados" class="footer-data pointer" :class="checkClass('/dados')">
-            <span class="material-icons">table_chart</span>
-        </a>
         <a href="/#/configuracoes" class="footer-settings pointer" :class="checkClass('/configuracoes')">
             <span class="material-icons">settings</span>
         </a>
