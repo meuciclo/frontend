@@ -3,7 +3,7 @@
     <div class="updater-text">Foi achado um update do aplicativo. Deseja atualizar?</div>
     <div class="updater-actions">
       <button class="yes" @click="refreshApp">SIM</button>
-      <button class="no" @click="showOption = false">NÃO 2</button>
+      <button class="no" @click="showOption = false">NÃO</button>
     </div>
   </div>
 </template>
