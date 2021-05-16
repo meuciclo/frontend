@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss">
   .updater {
-    $box-width: 50px;
+    $box-width: 150px;
     $box-height: 50px;
     width: $box-width;
     height: $box-height;
