@@ -28,6 +28,9 @@ export default {
       days: '0'
     }
   },
+  meta: {
+    title: 'Meu Ciclo'
+  },
   methods: {
     getRegisters: async function () {
       if (localStorage.registers) {

@@ -2,17 +2,25 @@
   <Header/>
   <router-view/>
   <Footer/>
+  <Updater/>
 </template>
 
 <script>
 import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
+import Updater from '@/components/shared/Updater'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Footer
+    Footer,
+    Updater
+  },
+  metaInfo: function () {
+    return {
+      title: 'Meu Ciclo'
+    }
   }
 }
 </script>

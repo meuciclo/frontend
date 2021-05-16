@@ -3,7 +3,11 @@ node_modules
 /dist
 /node_modules/*
 node_modules/
-
+/node_modules/
+vue-loader
+vue-loader/
+/vue-loader
+/vue-loader/
 
 # local env files
 .env.local
