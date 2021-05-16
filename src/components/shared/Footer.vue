@@ -34,7 +34,6 @@ export default {
   watch: {
     $route (to) {
       this.currentPath = to.path
-      console.log('aaaaa', to.path)
     }
   }
 }
