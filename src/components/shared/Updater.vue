@@ -24,13 +24,14 @@ export default {
 
 <style lang="scss">
   .updater {
-    $box-width: 70vw;
+    $box-width: 50px;
     $box-height: 50px;
     width: $box-width;
     height: $box-height;
     position: fixed;
-    left: calc(50% - #{$box-width});
-    top: calc(50% - #{$box-height});
+    background-color: gray;
+    left: calc(50vw - #{$box-width});
+    top: calc(50vw - #{$box-height});
     &-actions {
       display: flex;
       flex-direction: row;
