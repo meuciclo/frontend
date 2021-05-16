@@ -1,9 +1,9 @@
 <template>
   <div class="updater" v-if="updateExists && showOption">
-    <span>Foi achado um update do aplicativo.</span>
+    <span>Foi achado um update do aplicativo. Deseja atualizar?</span>
     <div class="updater-actions">
-      <button @click="refreshApp">Atualizar</button>
-      <button @click="showOption = false">Agora Não</button>
+      <button @click="refreshApp">SIM</button>
+      <button @click="showOption = false">NÃO</button>
     </div>
   </div>
 </template>
