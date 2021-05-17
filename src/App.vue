@@ -17,9 +17,9 @@ export default {
     Footer,
     Updater
   },
-  metaInfo: function () {
-    return {
-      title: 'Meu Ciclo'
+  watch: {
+    $route (to) {
+      document.title = `${to.meta.title} - Meu Ciclo`
     }
   }
 }
