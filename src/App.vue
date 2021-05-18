@@ -1,6 +1,8 @@
 <template>
   <Header/>
-  <router-view/>
+  <div class="pageContent">
+    <router-view/>
+  </div>
   <Footer/>
   <Updater/>
 </template>
@@ -40,6 +42,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .pageContent {
+    height: 100%;
+    margin-bottom: 75px;
+  }
   a, a:hover, a:focus, a:active {
     text-decoration: none;
     color: inherit;
