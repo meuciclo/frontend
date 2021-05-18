@@ -1,5 +1,5 @@
 <template>
-  <div class="table">
+  <div class="table" ref="dataTable">
     <table class="table-remove">
       <thead>
         <tr>
@@ -49,10 +49,22 @@ export default {
   methods: {
     addEntry: function () {
       this.entries.push({})
+      this.scrollToBottom()
     },
     removeEntry: function (index) {
       this.entries.splice(index, 1)
-      console.log('aaaa', index)
+    },
+    scrollToBottom: function () {
+      this.$nextTick(() => {
+        const element = this.$refs.dataTable
+        if (element) {
+          element.scroll({
+            top: element.scrollHeight + 100,
+            left: 0,
+            behavior: 'smooth'
+          })
+        }
+      })
     }
   },
   computed: {
@@ -64,6 +76,9 @@ export default {
         this.$emit('update:modelValue', value)
       }
     }
+  },
+  mounted: function () {
+    this.scrollToBottom()
   }
 }
 </script>
@@ -71,6 +86,8 @@ export default {
 <style lang="scss" scoped>
   .table {
     width: 300px;
+    height: calc(100vh / 2);
+    overflow-y: auto;
     @media (min-width: 768px) {
       width: 600px;
       display: flex;

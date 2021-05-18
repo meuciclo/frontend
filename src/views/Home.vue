@@ -20,6 +20,9 @@ export default {
     Counting,
     Register
   },
+  meta: {
+    title: 'Meu Ciclo'
+  },
   data: function () {
     return {
       registers: [],
@@ -27,9 +30,6 @@ export default {
       isCounting: false,
       days: '0'
     }
-  },
-  meta: {
-    title: 'Meu Ciclo'
   },
   methods: {
     getRegisters: async function () {
