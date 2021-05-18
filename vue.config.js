@@ -3,10 +3,10 @@ module.exports = {
     // ...other vue-cli plugin options...
     pwa: {
       name: 'Meu Ciclo',
-      themeColor: '#4DBA87',
-      msTileColor: '#000000',
+      themeColor: '#ffc0cb',
+      msTileColor: '#ffc0cb',
       appleMobileWebAppCapable: 'yes',
-      appleMobileWebAppStatusBarStyle: 'black',
+      appleMobileWebAppStatusBarStyle: 'pink',
     //   // configure the workbox plugin
     //   workboxPluginMode: 'InjectManifest',
     //   workboxOptions: {
