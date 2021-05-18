@@ -19,6 +19,9 @@ export default {
   components: {
     Table
   },
+  meta: {
+    title: 'Dados - Meu Ciclo'
+  },
   data: function () {
     return {
       registers: []
@@ -31,7 +34,6 @@ export default {
       } else {
         this.registers = []
       }
-      console.log('aaaaaaaaaa', this.registers)
     },
     cancel: async function () {
       await this.getRegisters()
