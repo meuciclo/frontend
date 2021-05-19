@@ -67,7 +67,7 @@ export default {
       height: 20px;
       width: 20px;
       left: 2px;
-      bottom: 1.5px;
+      bottom: 2px;
       background-color: white;
       -webkit-transition: .4s;
       transition: .4s;

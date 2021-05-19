@@ -53,6 +53,8 @@ body {
     cursor: pointer;
   }
   input {
+    height: 17px;
+    padding: 5px;
     border-radius: 3px;
     border-width: 1px;
     border-color: black;
