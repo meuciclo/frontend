@@ -12,7 +12,7 @@
       <span class="fields-field-cell"><span>Número de dias:</span></span>
       <span class="fields-field-cell"><input type="number" v-model="configs.daysMenstrualFlow" v-maska="{ mask: 'n', tokens: tokens }"></span>
     </div>
-    <div class="fields-field">
+    <div class="fields-field" v-if="configs.isCloud">
       <span class="fields-field-cell"><span>Avisar que está TPM:</span></span>
       <span class="fields-field-cell"><input type="text" placeholder="Email" v-model="configs.tpmAlert"></span>
     </div>

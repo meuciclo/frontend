@@ -24,7 +24,8 @@ export default {
         name: '',
         regularMenstrualFlow: false,
         daysMenstrualFlow: '',
-        tpmAlert: ''
+        tpmAlert: '',
+        isCloud: false
       }
     }
   },
