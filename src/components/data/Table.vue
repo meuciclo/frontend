@@ -100,7 +100,7 @@ export default {
         color: rgb(69, 156, 69);
         margin-top: 20px;
         font-size: 3rem;
-        &:focus, &:active {
+        &:active {
           color: rgb(122, 168, 122);
         }
         @media (min-width: 768px) {
@@ -111,7 +111,7 @@ export default {
         color: rgb(255, 77, 77);
         font-size: 2rem;
         margin: 0px 20px;
-        &:focus, &:active {
+        &:active {
           color: rgb(255, 170, 170);
         }
         @media (min-width: 768px) {

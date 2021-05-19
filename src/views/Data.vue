@@ -60,9 +60,15 @@ export default {
       }
       &-cancel {
         background-color: #ff9999;
+        &:active {
+          background-color: #ffc5c5;
+        }
       }
       &-save {
         background-color: #9eff9e;
+        &:active {
+          background-color: #c2ffc2;
+        }
       }
     }
   }
