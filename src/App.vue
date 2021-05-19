@@ -47,12 +47,22 @@ body {
     height: 100%;
     margin-bottom: 75px;
   }
-  a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: inherit;
-  }
   .pointer {
     cursor: pointer;
   }
+}
+
+span, div, h3, a {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 </style>

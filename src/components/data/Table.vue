@@ -1,6 +1,6 @@
 <template>
   <div class="table" ref="dataTable">
-    <table class="table-remove">
+    <table class="table-data">
       <thead>
         <tr>
           <th>Dia de Início</th>
@@ -11,24 +11,24 @@
       <tbody>
         <tr v-for="(entry, index) in entries" :key="index">
           <td>
-            <div class="table-remove-cell">
+            <div class="table-data-cell">
               <DateInput v-model="entry.begin" class="day"/>
             </div>
           </td>
           <td>
-            <div class="table-remove-cell">
+            <div class="table-data-cell">
               <DateInput v-model="entry.end" class="day"/>
             </div>
           </td>
           <td>
-            <span class="material-icons btn-remove pointer" @click="removeEntry(index)">
+            <a class="material-icons btn-remove pointer" @click="removeEntry(index)">
               remove_circle
-            </span>
+            </a>
           </td>
         </tr>
         <tr>
           <td colspan="3">
-            <span class="material-icons btn-add pointer" @click="addEntry">add_circle</span>
+            <a class="material-icons btn-add pointer" @click="addEntry">add_circle</a>
           </td>
         </tr>
       </tbody>
@@ -88,24 +88,82 @@ export default {
     width: 300px;
     height: calc(100vh / 2);
     overflow-y: auto;
+
     @media (min-width: 768px) {
       width: 600px;
       display: flex;
       justify-content: center;
     }
+
     .btn{
       &-add {
         color: rgb(69, 156, 69);
         margin-top: 20px;
-        font-size: 2rem;
+        font-size: 3rem;
+        &:focus, &:active {
+          color: rgb(122, 168, 122);
+        }
+        @media (min-width: 768px) {
+          font-size: 2rem;
+        }
       }
       &-remove {
         color: rgb(255, 77, 77);
+        font-size: 2rem;
+        margin: 0px 20px;
+        &:focus, &:active {
+          color: rgb(255, 170, 170);
+        }
+        @media (min-width: 768px) {
+          font-size: 1.3rem;
+        }
       }
     }
-    &-remove-cell {
+
+    &-data-cell {
       display: flex;
       justify-content: center;
+      align-items: center;
+      justify-items: center;
+      align-content: center;
+    }
+
+    td {
+      padding: 7px 0;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    &::-webkit-scrollbar-button {
+      width: 0px;
+      height: 0px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #e1e1e1;
+      border: 0px none #ffffff;
+      border-radius: 50px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #9c9c9c;
+    }
+    &::-webkit-scrollbar-thumb:active {
+      background: #757575;
+    }
+    &::-webkit-scrollbar-track {
+      background: #666666;
+      border: 0px none #ffffff;
+      border-radius: 50px;
+    }
+    &::-webkit-scrollbar-track:hover {
+      background: #666666;
+    }
+    &::-webkit-scrollbar-track:active {
+      background: #3e3e3e;
+    }
+    &::-webkit-scrollbar-corner {
+      background: transparent;
     }
   }
 </style>
