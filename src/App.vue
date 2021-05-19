@@ -64,6 +64,28 @@ body {
       border-color: rgb(33, 33, 33);
     }
   }
+  .btn {
+    .btn-default{
+      border: none;
+      margin: 0px 5px;
+      width: 100px;
+      height: 40px;
+    }
+    &-cancel {
+      .btn-default();
+      background-color: #ff9999;
+      &:active {
+        background-color: #ffc5c5;
+      }
+    }
+    &-save {
+      .btn-default();
+      background-color: #9eff9e;
+      &:active {
+        background-color: #c2ffc2;
+      }
+    }
+  }
 }
 
 span, div, h3, a {

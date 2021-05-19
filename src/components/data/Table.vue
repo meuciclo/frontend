@@ -21,9 +21,11 @@
             </div>
           </td>
           <td>
-            <a class="material-icons btn-remove pointer" @click="removeEntry(index)">
-              remove_circle
-            </a>
+            <div class="remove-wrapper">
+              <a class="material-icons btn-remove pointer" @click="removeEntry(index)">
+                remove_circle
+              </a>
+            </div>
           </td>
         </tr>
         <tr>
@@ -110,7 +112,7 @@ export default {
       &-remove {
         color: rgb(255, 77, 77);
         font-size: 2rem;
-        margin: 0px 20px;
+        margin: 0px 0px 0px 10px;
         &:active {
           color: rgb(255, 170, 170);
         }
@@ -130,6 +132,11 @@ export default {
 
     td {
       padding: 7px 0;
+    }
+
+    .remove-wrapper {
+      display: flex;
+      align-content: center;
     }
 
     &::-webkit-scrollbar {

@@ -1,12 +1,12 @@
 <template>
   <div class="data">
     <h3>Meus Registros</h3>
-    <div v-if="registers.length">
+    <div class="data-wrapper" v-if="registers.length">
       <Table v-model="registers"/>
     </div>
     <div class="data-actions">
-      <button class="data-actions-cancel" @click="cancel">Cancelar</button>
-      <button class="data-actions-save" @click="save">Salvar</button>
+      <button class="btn-cancel" @click="cancel">Cancelar</button>
+      <button class="btn-save" @click="save">Salvar</button>
     </div>
   </div>
 </template>
@@ -50,26 +50,12 @@ export default {
 
 <style lang="less" scoped>
   .data {
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+    }
     &-actions {
       margin-top: 20px;
-      button {
-        border: none;
-        margin: 0px 5px;
-        width: 70px;
-        height: 30px;
-      }
-      &-cancel {
-        background-color: #ff9999;
-        &:active {
-          background-color: #ffc5c5;
-        }
-      }
-      &-save {
-        background-color: #9eff9e;
-        &:active {
-          background-color: #c2ffc2;
-        }
-      }
     }
   }
 </style>
