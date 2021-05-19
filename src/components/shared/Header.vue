@@ -14,7 +14,7 @@ export default {
 
 <style lang="scss" scoped>
     .header {
-        width: 100vw;
+        width: 100%;
         height: 65px;
         background-color: pink;
         display: flex;
