@@ -1,19 +1,22 @@
 <template>
   <div class="updater" v-if="updateExists && showOption">
-    <div class="updater-text">Foi achado um update do aplicativo. Deseja atualizar?</div>
-    <div class="updater-actions">
-      <button class="yes" @click="refreshApp">SIM</button>
-      <button class="no" @click="showOption = false">NÃO</button>
-    </div>
+    <Modal title="Atualização">
+      <div class="updater-text">Foi achado um update do aplicativo. Deseja atualizar?</div>
+      <div class="updater-actions">
+        <button class="yes" @click="refreshApp">SIM</button>
+        <button class="no" @click="showOption = false">NÃO</button>
+      </div>
+    </Modal>
   </div>
 </template>
 
 <script>
 import update from '@/mixins/update'
-
+import Modal from '@/components/shared/Modal'
 export default {
   name: 'Updater',
   mixins: [update],
+  components: { Modal },
   data: function () {
     return {
       showOption: true
