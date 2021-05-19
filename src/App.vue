@@ -44,11 +44,23 @@ body {
   align-items: center;
 
   .pageContent {
+    width: 90vw;
     height: 100%;
     margin-bottom: 75px;
+    padding: 0px 15px;
   }
   .pointer {
     cursor: pointer;
+  }
+  input {
+    border-radius: 3px;
+    border-width: 1px;
+    border-color: black;
+    &:focus-visible {
+      outline: none;
+      border-width: 1.5px;
+      border-color: rgb(33, 33, 33);
+    }
   }
 }
 
