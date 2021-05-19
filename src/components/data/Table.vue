@@ -83,7 +83,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
   .table {
     width: 300px;
     height: calc(100vh / 2);

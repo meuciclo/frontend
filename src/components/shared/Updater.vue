@@ -25,17 +25,17 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
   .updater {
-    $box-width: 200px;
-    $box-height: 130px;
-    width: $box-width;
-    height: $box-height;
+    @box-width: 200px;
+    @box-height: 130px;
+    width: @box-width;
+    height: @box-height;
     position: fixed;
     background-color: white;
     padding: 20px;
-    left: calc(50% - ((#{$box-width}+40px)/2));
-    top: calc(50% - ((#{$box-height}+40px)/2));
+    left: calc(50% - ((@box-width+40px)/2));
+    top: calc(50% - ((@box-height+40px)/2));
     box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
     -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);

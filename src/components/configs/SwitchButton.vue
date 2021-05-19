@@ -23,14 +23,14 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  $switch-width: 45px;
-  $switch-height: 24px;
+<style lang="less" scoped>
+  @switch-width: 45px;
+  @switch-height: 24px;
   .switch {
     position: relative;
     display: inline-block;
-    width: $switch-width;
-    height: $switch-height;
+    width: @switch-width;
+    height: @switch-height;
     input {
       /* Hide default HTML checkbox */
       opacity: 0;
@@ -49,8 +49,8 @@ export default {
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
-    width: $switch-width;
-    height: $switch-height;
+    width: @switch-width;
+    height: @switch-height;
 
     /* Rounded sliders */
     &.round {
@@ -83,9 +83,9 @@ export default {
   }
 
   input:checked + .slider:before {
-    $checked-translate: 20px;
-    -webkit-transform: translateX($checked-translate);
-    -ms-transform: translateX($checked-translate);
-    transform: translateX($checked-translate);
+    @checked-translate: 20px;
+    -webkit-transform: translateX(@checked-translate);
+    -ms-transform: translateX(@checked-translate);
+    transform: translateX(@checked-translate);
   }
 </style>

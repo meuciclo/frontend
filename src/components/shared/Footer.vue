@@ -39,13 +39,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
     .footer {
-        $footer-height: 45px;
-        $footer-color: pink;
+        @footer-height: 45px;
+        @footer-color: pink;
         width: 100vw;
-        height: $footer-height;
-        background-color: $footer-color;
+        height: @footer-height;
+        background-color: @footer-color;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -59,12 +59,12 @@ export default {
             font-size: 1.4rem;
         }
         &-selected {
-            width: $footer-height;
-            height: $footer-height;
+            width: @footer-height;
+            height: @footer-height;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: lighten($color: $footer-color, $amount: 7);
+            background-color: lighten(@footer-color, 7%);
         }
     }
 </style>

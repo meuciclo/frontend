@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .modal {
   z-index: 1000;
   &-mask {

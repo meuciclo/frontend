@@ -19,17 +19,17 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
   .counting {
-    $commomText-size: 1.7rem;
+    @commomText-size: 1.7rem;
     &-who {
-      font-size: $commomText-size;
+      font-size: @commomText-size;
     }
     &-number {
       font-size: 6.7rem;
     }
     &-timing {
-      font-size: $commomText-size;
+      font-size: @commomText-size;
     }
   }
 </style>

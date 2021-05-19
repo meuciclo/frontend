@@ -16,16 +16,16 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
     .register {
         margin: 45px 0;
         display: flex;
         justify-content: center;
         align-items: center;
         &-btn {
-            $buttonSize: 170px;
-            width: $buttonSize;
-            height: $buttonSize;
+            @buttonSize: 170px;
+            width: @buttonSize;
+            height: @buttonSize;
             display: flex;
             justify-content: center;
             align-items: center;
