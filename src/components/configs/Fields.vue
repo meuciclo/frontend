@@ -5,11 +5,11 @@
       <span class="fields-field-cell"><input type="text" v-model="configs.name"></span>
     </div>
     <div class="fields-field">
-      <span class="fields-field-cell"><span>Ciclo de fluxo regular:</span></span>
+      <span class="fields-field-cell"><span>Colocar fim da menstruação automáticamente:</span></span>
       <span class="fields-field-cell"><SwitchButton v-model="configs.regularMenstrualFlow"/></span>
     </div>
     <div class="fields-field" v-if="configs.regularMenstrualFlow">
-      <span class="fields-field-cell"><span>Número de dias:</span></span>
+      <span class="fields-field-cell"><span>Quantos dias você menstrua:</span></span>
       <span class="fields-field-cell"><input type="number" v-model="configs.daysMenstrualFlow" v-maska="{ mask: 'n', tokens: tokens }"></span>
     </div>
     <div class="fields-field" v-if="configs.isCloud">
