@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import DateInput from '@/components/data/DateInput'
+import DateInput from '@/components/shared/DateInput'
 export default {
   name: 'Table',
   props: {
