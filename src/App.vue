@@ -11,9 +11,11 @@
 import Header from '@/components/shared/Header'
 import Footer from '@/components/shared/Footer'
 import Updater from '@/components/shared/Updater'
+import firstUse from '@/mixins/firstUse'
 
 export default {
   name: 'App',
+  mixins: [firstUse],
   components: {
     Header,
     Footer,
@@ -23,6 +25,9 @@ export default {
     $route (to) {
       document.title = `${to.meta.title} - Meu Ciclo`
     }
+  },
+  mounted () {
+    firstUse()
   }
 }
 </script>

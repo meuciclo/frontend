@@ -16,6 +16,11 @@
       <span class="fields-field-cell"><span>Avisar que está TPM:</span></span>
       <span class="fields-field-cell"><input type="text" placeholder="Email" v-model="configs.tpmAlert"></span>
     </div>
+    <div class="fields-field">
+      <span class="fields-field-cell"><span>Média do seu ciclo (dias)</span></span>
+      <span class="fields-field-cell"><input type="text" v-model="configs.avarageCycleTime" v-maska="{ mask: 'nN', tokens: tokens }"></span>
+    </div>
+    <slot></slot>
   </div>
 </template>
 
@@ -41,7 +46,8 @@ export default {
   data () {
     return {
       tokens: {
-        n: { pattern: '[1-9]' }
+        n: { pattern: '[1-9]' },
+        N: { pattern: '[0-9]' }
       }
     }
   }

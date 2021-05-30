@@ -25,6 +25,7 @@ export default {
         regularMenstrualFlow: false,
         daysMenstrualFlow: '',
         tpmAlert: '',
+        avarageCycleTime: 30,
         isCloud: false
       }
     }

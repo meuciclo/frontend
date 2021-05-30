@@ -2,23 +2,27 @@
   <div class="home">
     <template v-if="registers.length">
       <Counting :days="days" :isCounting="isCounting" />
+      <Register :isCounting="isCounting" @click="register"/>
     </template>
     <template v-else>
       <span class="noRegisters">Comece a registrar apertando o botão abaixo</span>
+      <Register :isCounting="isCounting" @click="register"/>
+      <FirstUse @firstUseCreated="initialize" />
     </template>
-    <Register :isCounting="isCounting" @click="register"/>
   </div>
 </template>
 
 <script>
 import Counting from '@/components/homePage/Counting'
 import Register from '@/components/homePage/Register'
+import FirstUse from '@/components/homePage/FirstUse'
 
 export default {
   name: 'Home',
   components: {
     Counting,
-    Register
+    Register,
+    FirstUse
   },
   meta: {
     title: 'Meu Ciclo'
@@ -88,13 +92,19 @@ export default {
       localStorage.registers = JSON.stringify(this.registers)
       this.checkIsCounting()
       this.countDays()
+    },
+    initialize: async function () {
+      await this.getRegisters()
+      await this.getLastRegister()
+      this.checkIsCounting()
+      this.countDays()
     }
   },
   mounted: async function () {
-    await this.getRegisters()
-    await this.getLastRegister()
-    this.checkIsCounting()
-    this.countDays()
+    this.initialize()
   }
 }
 </script>
+
+<style lang="less" scoped>
+</style>
