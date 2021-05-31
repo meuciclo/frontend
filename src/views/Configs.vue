@@ -12,6 +12,10 @@
 </template>
 
 <script>
+// Stores
+import { configStore } from '@/store/configs.js'
+
+// Component Methods
 import Fields from '@/components/configs/Fields'
 export default {
   name: 'Configs',
@@ -20,32 +24,16 @@ export default {
   },
   data () {
     return {
-      configs: {
-        name: '',
-        regularMenstrualFlow: false,
-        daysMenstrualFlow: '',
-        tpmAlert: '',
-        avarageCycleTime: 30,
-        isCloud: false
-      }
+      configs: configStore.state
     }
   },
   methods: {
-    getConfigs: async function () {
-      const configs = localStorage.configs
-      if (configs) {
-        this.configs = JSON.parse(configs)
-      }
-    },
     cancel: async function () {
-      this.getConfigs()
+      configStore.reset()
     },
     save: function () {
-      localStorage.configs = JSON.stringify(this.configs)
+      configStore.save()
     }
-  },
-  created () {
-    this.getConfigs()
   }
 }
 </script>

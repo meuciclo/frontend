@@ -59,9 +59,15 @@ export default {
       }
       this.isCounting = false
     },
+    dateDiffInDays: function (a, b) {
+      const _MS_PER_DAY = 1000 * 60 * 60 * 24
+      const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate())
+      const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate())
+      return Math.floor((utc2 - utc1) / _MS_PER_DAY)
+    },
     countDays: async function () {
       const register = this.lastRegister
-      if (register.end && register.end === '') {
+      if (register.end && register.end !== '') {
         this.days = await this.calcularData(register.end)
       } else if (register.begin && register.begin !== '') {
         this.days = await this.calcularData(register.begin)
@@ -70,15 +76,9 @@ export default {
       }
     },
     calcularData: async function (timestamp) {
-      const _MS_PER_DAY = 1000 * 60 * 60 * 24
-      const dateDiffInDays = function (a, b) {
-        const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate())
-        const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate())
-        return Math.floor((utc2 - utc1) / _MS_PER_DAY)
-      }
       const lastRegister = new Date(timestamp)
       const now = new Date(Date.now())
-      return '' + dateDiffInDays(lastRegister, now)
+      return '' + this.dateDiffInDays(lastRegister, now)
     },
     register: async function () {
       if (this.isCounting) {

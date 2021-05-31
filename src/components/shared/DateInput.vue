@@ -61,7 +61,6 @@ export default {
       set (value) {
         const timestamp = this.dateToTimestamp(value)
         this.$emit('update:modelValue', timestamp)
-        console.log('adasdadas', value, timestamp)
       }
     }
   }

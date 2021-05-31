@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { configStore } from '@/store/configs.js'
 import Fields from '@/components/configs/Fields'
 import DateInput from '@/components/shared/DateInput'
 export default {
@@ -29,27 +30,14 @@ export default {
   },
   data () {
     return {
-      configs: {
-        name: '',
-        regularMenstrualFlow: false,
-        daysMenstrualFlow: '',
-        tpmAlert: '',
-        avarageCycleTime: 30,
-        isCloud: false
-      },
+      configs: configStore.state,
       lastMenstruationBegin: '',
       lastMenstruationEnd: ''
     }
   },
   methods: {
-    getConfigs: async function () {
-      const configs = localStorage.configs
-      if (configs) {
-        this.configs = JSON.parse(configs)
-      }
-    },
     cancel: async function () {
-      this.getConfigs()
+      configStore.reset()
       this.lastMenstruation = ''
     },
     pushFirstDate: function () {
@@ -67,9 +55,6 @@ export default {
       this.pushFirstDate()
       this.$emit('firstUseCreated')
     }
-  },
-  created () {
-    this.getConfigs()
   }
 }
 </script>
