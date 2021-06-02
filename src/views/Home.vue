@@ -17,6 +17,8 @@ import Counting from '@/components/homePage/Counting'
 import Register from '@/components/homePage/Register'
 import FirstUse from '@/components/homePage/FirstUse'
 
+import { configStore } from '@/store/configs.js'
+
 export default {
   name: 'Home',
   components: {
@@ -29,6 +31,7 @@ export default {
   },
   data: function () {
     return {
+      configs: configStore.state,
       registers: [],
       lastRegister: {},
       isCounting: false,
@@ -87,6 +90,11 @@ export default {
         const newRegister = {}
         newRegister.begin = Date.now()
         this.registers.push(newRegister)
+        if (this.configs.regularMenstrualFlow && parseInt(this.configs.daysMenstrualFlow)) {
+          const date = new Date(Date.now())
+          date.setDate(date.getDate() + parseInt(this.configs.daysMenstrualFlow))
+          newRegister.end = date.getTime()
+        }
         this.lastRegister = newRegister
       }
       localStorage.registers = JSON.stringify(this.registers)

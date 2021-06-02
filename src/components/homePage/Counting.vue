@@ -1,10 +1,17 @@
 <template>
-  <div class="counting">
+  <div class="counting" v-if="days >= 0">
     <div class="counting-who">Você está</div>
     <div class="counting-number">{{days}}</div>
     <div class="counting-timing">dias
       <span v-if="isCounting == true"> menstruando</span>
       <span v-else> sem menstruar</span>
+    </div>
+  </div>
+  <div class="counting" v-else>
+    <div class="counting-who">Faltam</div>
+    <div class="counting-number">{{-1 * days}}</div>
+    <div class="counting-timing">dias
+      <span> para acabar sua menstruação</span>
     </div>
   </div>
 </template>
