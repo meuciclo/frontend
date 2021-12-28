@@ -59,6 +59,14 @@ export default {
           this.isCounting = true
           return
         }
+        if (register.end) {
+          const now = new Date(Date.now())
+          const end = new Date(register.end)
+          if (this.dateDiffInDays(end, now) < 0) {
+            this.isCounting = true
+            return
+          }
+        }
       }
       this.isCounting = false
     },
@@ -71,7 +79,11 @@ export default {
     countDays: async function () {
       const register = this.lastRegister
       if (register.begin && register.begin !== '') {
-        this.days = await this.calcularData(register.begin)
+        if (!register.end) {
+          this.days = await this.calcularData(register.begin)
+        } else {
+          this.days = await this.calcularData(register.end)
+        }
       } else {
         this.days = '0'
       }
