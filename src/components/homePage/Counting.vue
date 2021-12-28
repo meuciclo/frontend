@@ -4,7 +4,7 @@
     <div class="counting-number">{{days}}</div>
     <div class="counting-timing">dias
       <span v-if="isCounting == true"> menstruando</span>
-      <span v-else> sem menstruar</span>
+      <span v-else> desde sua última menstruação</span>
     </div>
   </div>
   <div class="counting" v-else>

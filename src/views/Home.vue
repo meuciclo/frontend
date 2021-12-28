@@ -70,9 +70,7 @@ export default {
     },
     countDays: async function () {
       const register = this.lastRegister
-      if (register.end && register.end !== '') {
-        this.days = await this.calcularData(register.end)
-      } else if (register.begin && register.begin !== '') {
+      if (register.begin && register.begin !== '') {
         this.days = await this.calcularData(register.begin)
       } else {
         this.days = '0'
