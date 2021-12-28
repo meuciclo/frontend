@@ -62,6 +62,7 @@ export default {
 <style lang="less" scoped>
   .fields {
     display: table;
+    margin: auto;
     &-field {
       display: table-row;
       height: 55px;
