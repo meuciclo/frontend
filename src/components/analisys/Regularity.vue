@@ -1,7 +1,7 @@
 <template>
   <div class="analisys-regularity">
     <div class="analisys-betweenMenstruation chart" v-if="differenceData.length > 2">
-      <h4>Diferença entre o primeiro dia da menstruação</h4>
+      <h4>Período de tempo entre o início de cada menstruação</h4>
       <line-chart :data="differenceData"></line-chart>
     </div>
     <div class="analisys-duration chart">
